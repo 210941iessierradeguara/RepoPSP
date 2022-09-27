@@ -4,9 +4,9 @@
 
 int main(int argc, char const *argv[])
 {
+    fork(); //duplica lo que viene después
     fork();
-    fork();
-    printf("Mi id es: %d y mi padre es: %d \n", getpid(), getppid());
+    printf("Mi PID es: %d y mi padre es: %d \n", getpid(), getppid());
 
     return 0;
 }
