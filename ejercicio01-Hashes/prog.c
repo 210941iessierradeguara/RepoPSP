@@ -8,18 +8,21 @@ void manejadorDeSenyal(int numSenyal);
 
 int main(int argc, char const *argv[])
 {
-    if (argv <= 1)
+    if (argc <= 1)
     {
-        printf("Añada más de un argumento");
+        printf("Añada al menos una ruta de archivo \n");
         return 0;
     } else {
-        for (size_t i = 0; i <= argv; i++)
+        for (int i = 1; i < argc; i++)
         {
+            printf("%d \n", i);
+            
             pid_t numfork = fork();
             if (numfork == 0)
             {
                 //hijo
                 sleep(1);
+
                 kill(getppid(), SIGUSR1);
             } else {
                 //padre
@@ -33,7 +36,6 @@ int main(int argc, char const *argv[])
             }
         }
     }
-
     return 0;
 }
 
