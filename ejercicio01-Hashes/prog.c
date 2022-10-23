@@ -93,9 +93,9 @@ int main(int argc, char const *argv[])
             pidHijo = wait(&estado);
             if (WEXITSTATUS(estado) == 0)
             {
-                printf("El hijo con PID: %d ha finalizaado con exito\n", pidHijo);
+                printf("El hijo con PID: %d ha finalizado con exito\n", pidHijo);
             } else {
-                printf("El hijo con PID: %d ha finalizaado con error\n", pidHijo);
+                printf("El hijo con PID: %d ha finalizado con error\n", pidHijo);
             }
         }
         return 0;
